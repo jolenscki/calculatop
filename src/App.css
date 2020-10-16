@@ -14,8 +14,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #444b58;
+  min-height: 100vh;  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,3 +36,107 @@
     transform: rotate(360deg);
   }
 }
+
+.container{
+  border-radius: 25px;
+  background: #3b3b39b0;
+  padding: 20px;
+  width: 50vw;
+  height: 90vh;
+  margin: 10vh auto;
+}
+
+
+
+
+.calculator_display{
+  background-color: rgba(0, 0, 0, 0.521);
+  text-align: right;
+  height: 20vh;
+  font-family: myriad-pro, sans-serif;
+  font-weight: 100;
+  padding: 10px;
+}
+
+.calculator_display_last{
+  color: #7c7575;
+  line-height: 2em;
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 7.5vh;
+  font-size: 20pt;
+}
+
+.calculator_display_current{
+  color: #ffffff;
+  line-height: 2em;
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 12.5vh;
+  font-size: 32pt;
+}
+
+
+button {
+  height: 60px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c4c4c4;
+  background-color: transparent;
+  font-size: 2rem;
+  color: #333;
+  background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+  text-shadow: 0 1px rgba(255,255,255,.4);
+}
+
+button:hover {
+  background-color: #eaeaea;
+}
+
+.key-operator {
+  color: #337cac;
+  background-color: rgb(187, 186, 184);
+}
+
+.all-clear {
+  background-color: #f0595f;
+  border-color: #b0353a;
+  color: #fff;
+}
+
+.all-clear:hover {
+  background-color: #f17377;
+}
+
+.equal-sign {
+  background-color: #2e86c0;
+  border-color: #337cac;
+  color: #fff;
+  height: 100%;
+  grid-row-start: 2;
+  grid-row-end: 6;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.equal-sign:hover {
+  background-color: #4e9ed4;
+}
+
+.calculator_keys{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+  
+}
+
+.number{
+  background-color: rgb(187, 186, 184);
+
+
+}
+

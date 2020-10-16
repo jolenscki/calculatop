@@ -1,0 +1,42 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'electron-dev'
+1 verbose cli ]
+2 info using npm@6.14.8
+3 info using node@v14.13.0
+4 verbose run-script [ 'preelectron-dev', 'electron-dev', 'postelectron-dev' ]
+5 info lifecycle calculatop@0.1.0~preelectron-dev: calculatop@0.1.0
+6 info lifecycle calculatop@0.1.0~electron-dev: calculatop@0.1.0
+7 verbose lifecycle calculatop@0.1.0~electron-dev: unsafe-perm in lifecycle true
+8 verbose lifecycle calculatop@0.1.0~electron-dev: PATH: C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;C:\Users\rodri\Documents\POLI\PMR3304\LAB\calculatop\node_modules\.bin;C:\SIMULIA\Commands;C:\tools\ruby27\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\rodri\Anaconda3;C:\Users\rodri\Anaconda3\Library\mingw-w64\bin;C:\Users\rodri\Anaconda3\Library\usr\bin;C:\Users\rodri\Anaconda3\Library\bin;C:\Users\rodri\Anaconda3\Scripts;C:\Users\rodri\AppData\Local\Microsoft\WindowsApps;C:\Users\rodri\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rodri\AppData\Local\GitHubDesktop\bin;C:\tools\msys64;C:\Users\rodri\AppData\Roaming\npm
+9 verbose lifecycle calculatop@0.1.0~electron-dev: CWD: C:\Users\rodri\Documents\POLI\PMR3304\LAB\calculatop
+10 silly lifecycle calculatop@0.1.0~electron-dev: Args: [
+10 silly lifecycle   '/d /s /c',
+10 silly lifecycle   'concurrently "SET BROWSER=none && npm run start""wait-on http://localhost:3000 && electron ." '
+10 silly lifecycle ]
+11 silly lifecycle calculatop@0.1.0~electron-dev: Returned: code: 1  signal: null
+12 info lifecycle calculatop@0.1.0~electron-dev: Failed to exec electron-dev script
+13 verbose stack Error: calculatop@0.1.0 electron-dev: `concurrently "SET BROWSER=none && npm run start""wait-on http://localhost:3000 && electron ." `
+13 verbose stack Exit status 1
+13 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\index.js:332:16)
+13 verbose stack     at EventEmitter.emit (events.js:314:20)
+13 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\lib\spawn.js:55:14)
+13 verbose stack     at ChildProcess.emit (events.js:314:20)
+13 verbose stack     at maybeClose (internal/child_process.js:1047:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:287:5)
+14 verbose pkgid calculatop@0.1.0
+15 verbose cwd C:\Users\rodri\Documents\POLI\PMR3304\LAB\calculatop
+16 verbose Windows_NT 10.0.18362
+17 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "electron-dev"
+18 verbose node v14.13.0
+19 verbose npm  v6.14.8
+20 error code ELIFECYCLE
+21 error errno 1
+22 error calculatop@0.1.0 electron-dev: `concurrently "SET BROWSER=none && npm run start""wait-on http://localhost:3000 && electron ." `
+22 error Exit status 1
+23 error Failed at the calculatop@0.1.0 electron-dev script.
+23 error This is probably not a problem with npm. There is likely additional logging output above.
+24 verbose exit [ 1, true ]
