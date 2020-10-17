@@ -3,11 +3,20 @@ import './App.css';
 
 
 export default class App extends React.Component {
-  state = {
+  constructor(props){
+    super(props);
+    this.state = {
       currentOperand : '',
       previousOperand : '',
       operation : ''
-  };
+    };
+    this.funcAdd = this.funcAdd.bind(this);
+    this.funcAddOperand = this.funcAddOperand.bind(this);
+    this.funcEqual = this.funcEqual.bind(this);
+    this.funcClear = this.funcClear.bind(this);
+  }
+  
+  
 
   funcAdd(number){ //funcao para concatenar digitos
     if (number === "."){ //se estamos adicionando um separador decimal
@@ -78,11 +87,11 @@ funcEqual(){
     }
   }
 
-this.setState(state => ({
-        previousOperand: result,
-        operation : '', 
-        currentOperand: '' 
-      }));
+  this.setState(state => ({
+          previousOperand: '',
+          operation : '', 
+          currentOperand: result 
+        }));
 }
 
 funcClear(){
