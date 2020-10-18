@@ -9,7 +9,8 @@ export default class App extends React.Component {
       currentOperand : '',
       previousOperand : '',
       operation : '',
-      memoryList: ['','','','']
+      memoryList: ['','','',''],
+      lastMemoryUpdate: -1
     };
     this.funcAdd = this.funcAdd.bind(this);
     this.funcAddOperand = this.funcAddOperand.bind(this);
@@ -106,49 +107,58 @@ funcClear(){
 
 }
 
-funcDeleteMemory(props){
+funcDeleteMemory(props = undefined){
   if (props === undefined){
     this.setState(state => ({
       memoryList : ['', '', '', '']
     }));
   } else{
+    var tempList = this.state.memoryList;
+    tempList.splice(props, 1, '');
     this.setState(state => ({
-      memoryList: this.state.memoryList.splice(props, 1, '')
+      memoryList: tempList
     }));
   }
 }
 
 funcRecoverMemory(props){
-  if (props === undefined){
-    this.setState(state => ({
-      currentOperand: this.state.memoryList.filter(x => x !== '').slice(-1)[0]
-    }));
-  } else{
-    this.setState(state => ({
-      currentOperand: this.state.memoryList[props]
-    }));
-  }
+  var tempList = this.state.memoryList;
+  var cOp = tempList[props];
+  this.setState(state => ({
+    currentOperand: cOp
+  }));
 }
 
 funcAddLast(){
+  var tempList = this.state.memoryList;
+  const idx = this.state.lastMemoryUpdate;
+  var cOp = parseFloat(this.state.currentOperand);
+  var lastMem = parseFloat(tempList[idx]);
+  var result = cOp + lastMem;
+ 
   this.setState(state => ({
-    previousOperand: this.state.currentOperand,
-    currentOperand: this.state.memoryList.filter(x => x !== '').slice(-1)[0],
-    operation: "+"
+    currentOperand: result,
   }));
-  this.funcEqual()
 }
 
-funcSaveRegister(){ if (this.state.memoryList.indexOf('') !== -1) {
-  this.setState(state => ({
-    memoryList: this.state.memoryList.splice(this.state.memoryList.indexOf(''), 1, this.state.currentOperand)
-  }));
+funcSaveRegister(){ 
+  var tempList = this.state.memoryList;
+  const cOp = this.state.currentOperand;
+  if (this.state.memoryList.indexOf('') !== -1) { //se existe um elemento vazio na memoria
+    const idx = tempList.indexOf('');
+    tempList[idx] = cOp;
+    this.setState(state => ({
+      memoryList: tempList,
+      lastMemoryUpdate: idx
+    }));
 } else{
-  this.setState(state => ({
-    memoryList: this.state.memoryList.splice(this.state.memoryList.indexOf(this.state.memoryList[0]), 1, this.state.currentOperand)
-  }));
-}
-console.log(this.state.memoryList)
+    const idx = (this.state.lastMemoryUpdate + 1) % 4
+    tempList[idx] = cOp
+    this.setState(state => ({
+      memoryList: tempList,
+      lastMemoryUpdate: idx
+    }));
+  }
 }
  
 render() {
@@ -164,7 +174,7 @@ render() {
                   </div>
                   <div className="calculator_keys">
                     <button className="number" onClick={() => this.funcDeleteMemory()}>MC</button>
-                    <button className="number" onClick={() => this.funcRecoverMemory()}>MR</button>
+                    <button className="number" onClick={() => this.funcRecoverMemory(this.state.lastMemoryUpdate)}>MR</button>
                     <button className="number" onClick={() => this.funcAddLast()}>M+</button>
                     <button className="number" onClick={() => this.funcSaveRegister()}>MS</button>
                     <button className="key-operator" data-ops="plus" onClick={() => this.funcAddOperand('+')}>+</button>
@@ -209,7 +219,6 @@ render() {
               <button className="memory_button" onClick={() => this.funcRecoverMemory(3)}>MC</button>
               <button className="memory_button" onClick={() => this.funcDeleteMemory(3)}>MR</button>
             </div>
-
           </div>
         </div>
       </header>
