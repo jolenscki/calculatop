@@ -37,6 +37,13 @@
   }
 }
 
+.mega_container{
+  display: inline-block;
+  width: 80vw;
+  vertical-align: top;
+
+}
+
 .container{
   border-radius: 25px;
   background: #3b3b39b0;
@@ -44,6 +51,41 @@
   width: 50vw;
   height: 90vh;
   margin: 10vh auto;
+  float: left;
+  border: 10px;
+}
+
+.memory_container{
+  margin: 10vh auto;
+  margin-top: 20vh;
+  margin-left: 5vw;
+  padding: 20px;
+  border-left: 10px;
+  float: left;
+  border-radius: 25px;
+  background: #3b3b39b0;
+  width: fit-content;
+  height: fit-content;
+}
+
+.memory_cell{
+  padding: 5px;
+}
+
+.memory_display{
+  background-color: rgba(0, 0, 0, 0.521);
+  text-align: right;
+  height: 7.5vh;
+  font-family: myriad-pro, sans-serif;
+  font-weight: 100;
+  padding: 10px;
+}
+
+.memory_button{
+  background-color: rgb(187, 186, 184);
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: auto;
 }
 
 
@@ -116,8 +158,8 @@ button:hover {
   border-color: #337cac;
   color: #fff;
   height: 100%;
-  grid-row-start: 2;
-  grid-row-end: 6;
+  grid-row-start: 3;
+  grid-row-end: 7;
   grid-column-start: 4;
   grid-column-end: 5;
 }
